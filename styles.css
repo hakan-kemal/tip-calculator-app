@@ -32,8 +32,8 @@
   --spacing-600: 3rem;
   --spacing-1000: 5rem;
   --spacing-1200: 6rem;
+  --spacing-1300: 6.5rem;
   --spacing-1500: 7.5rem;
-  --spacing-1600: 8rem;
   /* shadows */
   --box-shadow-card: 0 2rem 2.6875rem 0 rgba(79, 166, 175, 0.2);
 }
@@ -249,5 +249,35 @@ main {
   .cash-amount {
     font-size: 3rem;
     line-height: 1.5;
+  }
+}
+
+@media (min-width: 90rem) {
+  .tip-calculator {
+    flex-direction: row;
+    gap: var(--spacing-600);
+    max-width: 57.5rem;
+    padding: var(--spacing-400) var(--spacing-500);
+    border-radius: var(--radius-lg);
+  }
+
+  .bill-container {
+    margin-block: var(--spacing-200);
+    gap: var(--spacing-500);
+  }
+
+  .results-container {
+    gap: var(--spacing-300);
+    padding: 2.375rem;
+  }
+
+  .tip-amount,
+  .total-amount {
+    gap: var(--spacing-1200);
+    width: max-content;
+  }
+
+  .reset-btn {
+    margin-top: var(--spacing-1300);
   }
 }
