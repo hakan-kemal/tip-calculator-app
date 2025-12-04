@@ -1,0 +1,58 @@
+:root {
+  --color-white: hsl(0, 100%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-grey-600: hsl(180, 25%, 32%);
+  --color-grey-550: hsl(180, 18%, 40%);
+  --color-grey-500: hsl(186, 14%, 43%);
+  --color-grey-400: hsl(184, 14%, 56%);
+  --color-grey-300: hsl(184, 19%, 68%);
+  --color-grey-200: hsl(185, 41%, 84%);
+  --color-grey-100: hsl(189, 47%, 97%);
+  --color-green-900: hsl(183, 100%, 15%);
+  --color-green-800: hsl(183, 85%, 21%);
+  --color-green-750: hsl(183, 79%, 24%);
+  --color-green-400: hsl(172, 67%, 45%);
+  --color-green-200: hsl(173, 61%, 77%);
+  --color-orange-400: hsl(13, 70%, 60%);
+  /* typography */
+  --font-family-base: 'Space Mono', monospace;
+  --font-weight-bold: 700;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+  /* border radius */
+  --radius-sm: 0.3125rem;
+  --radius-base: 0.9375rem;
+  --radius-lg: 1.5625rem;
+  /* spacing */
+  --spacing-100: 0.5rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-600: 3rem;
+  --spacing-1000: 5rem;
+  --spacing-1200: 6rem;
+  --spacing-1500: 7.5rem;
+  --spacing-1600: 8rem;
+  /* shadows */
+}
+
+html {
+  box-sizing: border-box;
+  background-color: var(--color-grey-200);
+  color: var(--color-grey-500);
+  font: var(--font-weight-bold) var(--font-size-base) / var(--line-height-base)
+    var(--font-family-base);
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
