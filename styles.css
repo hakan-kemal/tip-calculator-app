@@ -7,7 +7,7 @@
   --color-grey-400: hsl(184, 14%, 56%);
   --color-grey-300: hsl(184, 19%, 68%);
   --color-grey-200: hsl(185, 41%, 84%);
-  --color-grey-100: hsl(189, 47%, 97%);
+  --color-grey-50: hsl(189, 47%, 97%);
   --color-green-900: hsl(183, 100%, 15%);
   --color-green-800: hsl(183, 85%, 21%);
   --color-green-750: hsl(183, 79%, 24%);
@@ -28,12 +28,14 @@
   --spacing-200: 1rem;
   --spacing-300: 1.5rem;
   --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
   --spacing-600: 3rem;
   --spacing-1000: 5rem;
   --spacing-1200: 6rem;
   --spacing-1500: 7.5rem;
   --spacing-1600: 8rem;
   /* shadows */
+  --box-shadow-card: 0 2rem 2.6875rem 0 rgba(79, 166, 175, 0.2);
 }
 
 html {
@@ -55,4 +57,167 @@ html {
 
 body {
   min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: inherit;
+}
+
+.app-logo {
+  margin: 3.125rem auto var(--spacing-500);
+}
+
+.tip-calculator {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+  box-shadow: var(--box-shadow-card);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  padding: 2.125rem var(--spacing-300);
+}
+
+.bill-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-400);
+  margin-inline: var(--spacing-100);
+}
+
+.bill,
+.tip,
+.people {
+  width: 100%;
+}
+
+.bill-input,
+.people-input {
+  margin-top: var(--spacing-100);
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-100) var(--spacing-200);
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+  background-size: 1rem;
+  background-color: var(--color-grey-50);
+  color: var(--color-green-900);
+  font-family: var(--font-family-base);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 2rem;
+  text-align: right;
+
+  &::placeholder {
+    color: var(--color-grey-300);
+  }
+
+  &:hover,
+  &:focus {
+    outline: 2px solid var(--color-green-400);
+  }
+
+  &.error {
+    outline: 2px solid var(--color-orange-400);
+  }
+}
+
+.bill-input {
+  background-image: url('./images/icon-dollar.svg');
+}
+.people-input {
+  background-image: url('./images/icon-person.svg');
+}
+
+.tip-buttons {
+  margin-top: var(--spacing-100);
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-200);
+}
+
+.tip-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.375rem var(--spacing-200);
+  background-color: var(--color-green-900);
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5;
+  cursor: pointer;
+
+  &.selected {
+    background-color: var(--color-green-400);
+    color: var(--color-green-900);
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-green-200);
+    color: var(--color-green-900);
+  }
+}
+
+.custom-btn {
+  background-color: var(--color-grey-50);
+  color: var(--color-green-550);
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+  padding: 1.75rem var(--spacing-300);
+  background-color: var(--color-green-900);
+  color: var(--color-white);
+  border-radius: var(--radius-base);
+}
+
+.tip-amount,
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.cash-amount {
+  font-size: 2rem;
+  color: var(--color-green-400);
+}
+
+.per-person {
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.1875rem;
+  color: var(--color-grey-400);
+}
+
+.reset-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-100);
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.5625rem var(--spacing-300);
+  background-color: var(--color-green-400);
+  color: var(--color-green-900);
+  font-family: var(--font-family-base);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5;
+  cursor: pointer;
+  text-transform: uppercase;
 }

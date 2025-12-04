@@ -22,18 +22,60 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <img src="./images/logo.svg" alt="logo" />
-    <h1>Bill</h1>
-    <h2>Select Tip %</h2>
-    <button>5%</button>
-    <button>10%</button>
-    <button>15%</button>
-    <button>25%</button>
-    <button>50%</button>
-    <button>Custom</button>
-    <p>Number of People</p>
-    <p>Tip Amount / person</p>
-    <p>Total / person</p>
-    <button>Reset</button>
+    <main>
+      <img class="app-logo" src="./images/logo.svg" alt="logo" />
+
+      <article class="tip-calculator">
+        <section class="bill-container">
+          <div class="bill">
+            <label class="bill-label" for="bill-input">Bill</label>
+            <input
+              id="bill-input"
+              class="bill-input"
+              type="text"
+              placeholder="0"
+            />
+          </div>
+
+          <div class="tip">
+            <p class="tip-label">Select Tip %</p>
+
+            <div class="tip-buttons">
+              <button class="tip-btn">5%</button>
+              <button class="tip-btn">10%</button>
+              <button class="tip-btn">15%</button>
+              <button class="tip-btn">25%</button>
+              <button class="tip-btn">50%</button>
+              <button class="tip-btn custom-btn">Custom</button>
+            </div>
+          </div>
+
+          <div class="people">
+            <label class="people-label" for="people-input"
+              >Number of People</label
+            >
+            <input
+              id="people-input"
+              class="people-input"
+              type="text"
+              placeholder="0"
+            />
+          </div>
+        </section>
+
+        <section class="results-container">
+          <div class="tip-amount">
+            <p>Tip Amount <span class="per-person">/ person</span></p>
+            <p class="cash-amount">$4.27</p>
+          </div>
+
+          <div class="total-amount">
+            <p>Total <span class="per-person">/ person</span></p>
+            <p class="cash-amount">$32.79</p>
+          </div>
+          <button type="button" class="reset-btn">Reset</button>
+        </section>
+      </article>
+    </main>
   </body>
 </html>
