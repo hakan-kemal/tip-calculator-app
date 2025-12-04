@@ -268,13 +268,9 @@ main {
 
   .results-container {
     gap: var(--spacing-300);
-    padding: 2.375rem;
-  }
-
-  .tip-amount,
-  .total-amount {
-    gap: var(--spacing-1200);
-    width: max-content;
+    padding: 2.375rem var(--spacing-500);
+    max-width: 26rem;
+    width: 100%;
   }
 
   .reset-btn {

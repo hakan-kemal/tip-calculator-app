@@ -32,7 +32,7 @@
             <input
               id="bill-input"
               class="bill-input"
-              type="text"
+              type="number"
               placeholder="0"
             />
           </div>
@@ -41,12 +41,12 @@
             <p class="tip-label">Select Tip %</p>
 
             <div class="tip-buttons">
-              <button class="tip-btn">5%</button>
-              <button class="tip-btn">10%</button>
-              <button class="tip-btn">15%</button>
-              <button class="tip-btn">25%</button>
-              <button class="tip-btn">50%</button>
-              <button class="tip-btn custom-btn">Custom</button>
+              <button id="tip-5" class="tip-btn">5%</button>
+              <button id="tip-10" class="tip-btn">10%</button>
+              <button id="tip-15" class="tip-btn">15%</button>
+              <button id="tip-25" class="tip-btn">25%</button>
+              <button id="tip-50" class="tip-btn">50%</button>
+              <button id="tip-custom" class="tip-btn custom-btn">Custom</button>
             </div>
           </div>
 
@@ -57,7 +57,7 @@
             <input
               id="people-input"
               class="people-input"
-              type="text"
+              type="number"
               placeholder="0"
             />
           </div>
@@ -66,12 +66,12 @@
         <section class="results-container">
           <div class="tip-amount">
             <p>Tip Amount <span class="per-person">/ person</span></p>
-            <p class="cash-amount">$4.27</p>
+            <p id="tip-calculated" class="cash-amount">$0.00</p>
           </div>
 
           <div class="total-amount">
             <p>Total <span class="per-person">/ person</span></p>
-            <p class="cash-amount">$32.79</p>
+            <p id="total-calculated" class="cash-amount">$0.00</p>
           </div>
           <button type="button" class="reset-btn">Reset</button>
         </section>
