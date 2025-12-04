@@ -221,3 +221,33 @@ main {
   cursor: pointer;
   text-transform: uppercase;
 }
+
+@media (min-width: 48rem) {
+  .tip-calculator {
+    gap: var(--spacing-500);
+    margin: auto;
+    max-width: 38rem;
+    padding: 3.375rem 4.75rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .bill-container {
+    gap: var(--spacing-300);
+    margin-inline: 0;
+  }
+
+  .tip-buttons {
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .results-container {
+    gap: var(--spacing-100);
+    padding: 2.6875rem var(--spacing-600);
+  }
+
+  .cash-amount {
+    font-size: 3rem;
+    line-height: 1.5;
+  }
+}
