@@ -68,6 +68,19 @@ main {
   min-height: inherit;
 }
 
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -0.0625rem;
+  border: 0;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  white-space: nowrap;
+}
+
 .app-logo {
   margin-top: var(--spacing-600);
 }

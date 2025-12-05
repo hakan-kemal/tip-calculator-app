@@ -23,9 +23,11 @@
   </head>
   <body>
     <main>
+      <h1 class="sr-only">Tip Calculator App</h1>
+
       <img class="app-logo" src="./images/logo.svg" alt="logo" />
 
-      <article class="tip-calculator">
+      <div class="tip-calculator">
         <section class="bill-container">
           <div class="bill">
             <label class="bill-label" for="bill-input">Bill</label>
@@ -41,12 +43,14 @@
             <p class="tip-label">Select Tip %</p>
 
             <div class="tip-buttons">
-              <button id="tip-5" class="tip-btn">5%</button>
-              <button id="tip-10" class="tip-btn">10%</button>
-              <button id="tip-15" class="tip-btn">15%</button>
-              <button id="tip-25" class="tip-btn">25%</button>
-              <button id="tip-50" class="tip-btn">50%</button>
-              <button id="tip-custom" class="tip-btn custom-btn">Custom</button>
+              <button type="button" id="tip-5" class="tip-btn">5%</button>
+              <button type="button" id="tip-10" class="tip-btn">10%</button>
+              <button type="button" id="tip-15" class="tip-btn">15%</button>
+              <button type="button" id="tip-25" class="tip-btn">25%</button>
+              <button type="button" id="tip-50" class="tip-btn">50%</button>
+              <button type="button" id="tip-custom" class="tip-btn custom-btn">
+                Custom
+              </button>
             </div>
           </div>
 
@@ -64,6 +68,7 @@
               class="people-input"
               type="number"
               placeholder="0"
+              aria-describedby="error-msg"
             />
           </div>
         </section>
@@ -82,7 +87,7 @@
             Reset
           </button>
         </section>
-      </article>
+      </div>
     </main>
   </body>
 </html>
