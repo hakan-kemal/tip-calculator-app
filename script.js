@@ -29,7 +29,10 @@ const hideError = () => {
 };
 
 const checkPeopleError = () => {
-  if (billInput.value > 0 && Number(peopleInput.value) === 0) {
+  const billAmount = Number(billInput.value);
+  const peopleCount = Number(peopleInput.value);
+
+  if (billAmount > 0 && peopleCount === 0) {
     showError();
     return true;
   }
@@ -56,12 +59,21 @@ tipButtons.forEach((btn) => {
     btn.classList.add('selected');
 
     if (btn.id === 'tip-custom') {
-      const customValue = prompt('Enter custom tip percentage');
-      const parsed = parseFloat(customValue);
+      let customValue;
+      let parsed;
 
-      selectedTip = Number.isFinite(parsed) && parsed >= 0 ? parsed : 0;
+      do {
+        customValue = prompt('Enter custom tip percentage (e.g., 15 for 15%)');
+        if (customValue === null) {
+          parsed = 0;
+          break;
+        }
+        parsed = parseFloat(customValue);
+      } while (!Number.isFinite(parsed) || parsed < 0);
+
+      selectedTip = parsed;
     } else {
-      selectedTip = parseFloat(btn.textContent);
+      selectedTip = parseFloat(btn.textContent.trim());
     }
 
     if (!checkPeopleError()) calculate();
