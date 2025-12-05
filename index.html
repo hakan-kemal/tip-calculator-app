@@ -51,9 +51,14 @@
           </div>
 
           <div class="people">
-            <label class="people-label" for="people-input"
-              >Number of People</label
-            >
+            <div class="people-label-container">
+              <label class="people-label" for="people-input"
+                >Number of People</label
+              >
+              <strong class="people-error hidden" id="error-msg" role="alert">
+                Can't be zero
+              </strong>
+            </div>
             <input
               id="people-input"
               class="people-input"
@@ -73,7 +78,9 @@
             <p>Total <span class="per-person">/ person</span></p>
             <p id="total-calculated" class="cash-amount">$0.00</p>
           </div>
-          <button type="button" class="reset-btn">Reset</button>
+          <button id="reset-btn" type="button" class="reset-btn disabled">
+            Reset
+          </button>
         </section>
       </article>
     </main>

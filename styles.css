@@ -31,9 +31,8 @@
   --spacing-500: 2.5rem;
   --spacing-600: 3rem;
   --spacing-1000: 5rem;
-  --spacing-1200: 6rem;
+  --spacing-1100: 5.5rem;
   --spacing-1300: 6.5rem;
-  --spacing-1500: 7.5rem;
   /* shadows */
   --box-shadow-card: 0 2rem 2.6875rem 0 rgba(79, 166, 175, 0.2);
 }
@@ -62,12 +61,15 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-500);
   width: 100%;
   min-height: inherit;
 }
 
 .app-logo {
-  margin: 3.125rem auto var(--spacing-500);
+  margin-top: var(--spacing-600);
 }
 
 .tip-calculator {
@@ -93,6 +95,17 @@ main {
 .tip,
 .people {
   width: 100%;
+}
+
+.people-label-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  & .people-error {
+    color: var(--color-orange-400);
+  }
 }
 
 .bill-input,
@@ -220,15 +233,31 @@ main {
   line-height: 1.5;
   cursor: pointer;
   text-transform: uppercase;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-green-200);
+    color: var(--color-green-900);
+  }
+
+  &.disabled {
+    background-color: var(--color-green-750);
+    color: var(--color-green-800);
+    cursor: not-allowed;
+  }
 }
 
 @media (min-width: 48rem) {
+  main {
+    gap: var(--spacing-600);
+  }
+
   .tip-calculator {
     gap: var(--spacing-500);
-    margin: auto;
     max-width: 38rem;
     padding: 3.375rem 4.75rem;
     border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-1000);
   }
 
   .bill-container {
@@ -253,6 +282,10 @@ main {
 }
 
 @media (min-width: 90rem) {
+  main {
+    gap: var(--spacing-1100);
+  }
+
   .tip-calculator {
     flex-direction: row;
     gap: var(--spacing-600);
@@ -269,11 +302,14 @@ main {
   .results-container {
     gap: var(--spacing-300);
     padding: 2.375rem var(--spacing-500);
-    max-width: 26rem;
-    width: 100%;
+    width: 26rem;
   }
 
   .reset-btn {
     margin-top: var(--spacing-1300);
   }
+}
+
+.hidden {
+  visibility: hidden;
 }
